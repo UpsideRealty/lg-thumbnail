@@ -42,7 +42,7 @@
         this.$el = $(element);
         this.$thumbOuter = null;
         this.thumbOuterWidth = 0;
-        this.thumbTotalWidth = (this.core.$items.length * (this.core.s.thumbWidth + this.core.s.thumbMargin));
+        this.thumbTotalWidth = this.core.s.thumbMargin + (this.core.items.length * (this.core.s.thumbWidth + this.core.s.thumbMargin));
         this.thumbIndex = this.core.index;
 
         if (this.core.s.animateThumb) {
@@ -159,7 +159,7 @@
                 thumbImg = thumb;
             }
 
-            thumbList += '<div data-vimeo-id="' + vimeoId + '" class="lg-thumb-item" style="width:' + _this.core.s.thumbWidth + 'px; height: ' + _this.core.s.thumbHeight + '; margin-right: ' + _this.core.s.thumbMargin + 'px"><img src="' + thumbImg + '" /></div>';
+            thumbList += '<div data-vimeo-id="' + vimeoId + '" class="lg-thumb-item" style="width:' + _this.core.s.thumbWidth + 'px; margin-right: ' + _this.core.s.thumbMargin + 'px;' + (!index ? (' margin-left: ' + _this.core.s.thumbMargin + 'px') : '') + '"><img src="' + thumbImg + '" /></div>';
             vimeoId = '';
         }
 
